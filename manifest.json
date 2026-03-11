@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "GhostPhish Detector",
+  "version": "1.0",
+  "description": "Automatically detects and scans URLs and attachments for phishing threats",
+  "icons": {
+    "48": "icons/ghostphish-48.png",
+    "128": "icons/ghostphish-128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "notifications",
+    "tabs",
+    "scripting",
+    "storage",
+    "webNavigation"
+  ],
+  "host_permissions": [
+    "*://*/*",
+    "http://127.0.0.1:5000/*",
+    "https://api.emailjs.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "history.html",
+        "icons/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "48": "icons/ghostphish-48.png",
+      "128": "icons/ghostphish-128.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "GhostPhish Detector"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}
