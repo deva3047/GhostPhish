@@ -200,7 +200,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-Made with ❤️ by [deva3047](https://github.com/deva3047)
+Made with ❤️ by [K1llbytes](https://github.com/deva3047)
 
 ⭐ **Star this repo if you find it useful!** ⭐
 
